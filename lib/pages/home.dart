@@ -33,7 +33,8 @@ class HomePage extends StatelessWidget {
         body: TabBarView(
           children: [
             Center(child: Text('Content of Tab 1')), // Content of first tab
-            Center(child: Text('Content of Tab 2')), // Content of second tab
+            Center(child: Text('Content of Tab 2')),
+            Center(child:Text("jwbfiouwneof")), // Content of second tab
           ],
         ),
       ),
