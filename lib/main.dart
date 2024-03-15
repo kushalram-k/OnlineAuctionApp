@@ -1,3 +1,4 @@
+import 'package:auction_app/pages/register.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:auction_app/pages/login.dart';
@@ -14,13 +15,12 @@ void main() {
     ),
     debugShowCheckedModeBanner: false,
     initialRoute: '/home',
-    routes:{
-      '/':(context) => login(),
+    routes: {
+      '/': (context) => login(),
       // '/loading':(context) => loading(),
-      '/home':(context) => HomePage(),
+      '/home': (context) => HomePage(),
       // '/location':(context) => choose_location(),
-    }   
-    ,
+      '/register': (context) => RegisterPage(),
+    },
   ));
 }
-

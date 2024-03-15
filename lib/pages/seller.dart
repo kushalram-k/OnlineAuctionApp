@@ -18,7 +18,7 @@ class _additemState extends State<additem> {
     return Scaffold(
       appBar: AppBar(
         title: Text(
-          'Register Item for Auction',
+          'Sell Item',
           style: TextStyle(color: Color.fromARGB(255, 30, 28, 27)),
         ),
       ),

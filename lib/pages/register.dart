@@ -1,19 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/widgets.dart';
 
-class RegisterApp extends StatelessWidget {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Register Page',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: RegisterPage(),
-    );
-  }
-}
-
 class RegisterPage extends StatefulWidget {
   @override
   _RegisterPageState createState() => _RegisterPageState();
@@ -24,13 +11,16 @@ class _RegisterPageState extends State<RegisterPage> {
   final TextEditingController _emailController = TextEditingController();
   final TextEditingController _contactController = TextEditingController();
   final TextEditingController _passwordController = TextEditingController();
+  final TextEditingController _confirmpasswordController =
+      TextEditingController();
   bool _obscureText = true;
+  bool _obscureText1 = true;
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(),
       body: Padding(
-        padding: const EdgeInsets.all(20.0),
+        padding: const EdgeInsets.all(10.0),
         child: Column(
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.start,
@@ -43,7 +33,7 @@ class _RegisterPageState extends State<RegisterPage> {
               ),
             ),
             SizedBox(
-              height: 20.0,
+              height: 10.0,
             ),
             TextFormField(
               controller: _usernameController,
@@ -54,7 +44,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         BorderSide(color: Color.fromARGB(255, 216, 97, 29))),
               ),
             ),
-            const SizedBox(height: 20.0),
+            const SizedBox(height: 10.0),
             TextFormField(
               controller: _emailController,
               decoration: const InputDecoration(
@@ -64,7 +54,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         BorderSide(color: Color.fromARGB(255, 216, 97, 29))),
               ),
             ),
-            const SizedBox(height: 20.0),
+            const SizedBox(height: 10.0),
             TextFormField(
               controller: _contactController,
               obscureText: false,
@@ -75,7 +65,7 @@ class _RegisterPageState extends State<RegisterPage> {
                         BorderSide(color: Color.fromARGB(255, 216, 97, 29))),
               ),
             ),
-            const SizedBox(height: 20.0),
+            const SizedBox(height: 10.0),
             TextFormField(
               controller: _passwordController,
               obscureText: _obscureText,
@@ -95,7 +85,27 @@ class _RegisterPageState extends State<RegisterPage> {
                 ),
               ),
             ),
-            const SizedBox(height: 20.0),
+            SizedBox(height: 10.0),
+            TextFormField(
+              controller: _confirmpasswordController,
+              obscureText: _obscureText1,
+              decoration: InputDecoration(
+                labelText: 'Confirm Password',
+                focusedBorder: OutlineInputBorder(
+                    borderSide:
+                        BorderSide(color: Color.fromARGB(255, 216, 97, 29))),
+                suffixIcon: IconButton(
+                  icon: Icon(
+                      _obscureText1 ? Icons.visibility : Icons.visibility_off),
+                  onPressed: () {
+                    setState(() {
+                      _obscureText1 = !_obscureText1;
+                    });
+                  },
+                ),
+              ),
+            ),
+            const SizedBox(height: 10.0),
             Center(
               child: SizedBox(
                 width: 400.0,
